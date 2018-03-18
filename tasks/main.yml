@@ -59,9 +59,6 @@
    - localhost
    - "{{ ansible_hostname }}"
 
-- name: remove the test database
-  mysql_db: name=test state=absent
-
 - name: Create the database's
   mysql_db: name={{ item.name }} state=present
   with_items:
